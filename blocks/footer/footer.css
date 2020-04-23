@@ -1,5 +1,11 @@
 @import url(./__copyright/footer__copyright.css);
 
-.footer{
+.footer {
   max-width: 882px;
+}
+
+@media screen and (min-width: 882px){
+  .footer {
+    margin: 66px auto 60px;
+  }
 }

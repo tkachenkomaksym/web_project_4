@@ -1,0 +1,6 @@
+@import url(./__heart/button__heart.css);
+
+.button:hover {
+  cursor: pointer;
+  opacity: .6;
+}

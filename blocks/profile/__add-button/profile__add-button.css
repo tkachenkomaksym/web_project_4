@@ -1,9 +1,13 @@
 .profile__add-button {
+  padding: 0;
   height: 50px;
   width: 282px;
   border: 2px solid #FFFFFF;
-  margin-top: 21px;
-  background: #000 url(/images/icon_add.svg) no-repeat center;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin-top: 30px;
+  background: #000 url("../../../images/icon_add.svg") no-repeat center;
+  background-size: 16px;
 }
 
 @media screen and (min-width: 882px){
@@ -11,5 +15,6 @@
     width: 170px;
     margin-left: 154px;
     margin-top: 30px;
+    background-size: 22px;
   }
 }

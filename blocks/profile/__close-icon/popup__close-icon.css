@@ -1,0 +1,18 @@
+.popup__close-icon {
+  padding: 0;
+  position: absolute;
+  border: none;
+  width: 41px;
+  height: 41px;
+  background: url(../../../images/icon_close.svg);
+  background-size: 40px;
+  margin-left: 226px;
+  margin-top: -30px;
+}
+
+@media screen  and (max-width: 460px){
+  .popup__close-icon {
+    margin-left: 150px;
+    margin-top: -30px;
+  }
+}

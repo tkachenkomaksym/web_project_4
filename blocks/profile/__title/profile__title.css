@@ -1,4 +1,4 @@
-.profile__heading {
+.profile__title {
   margin: 13px 0 0;
   width: 258px;
   height: 38px;
@@ -7,9 +7,8 @@
   line-height: 56px;
 }
 
-
 @media screen and (min-width: 882px){
-  .profile__heading {
+  .profile__title {
     width: auto;
     font-size: 42px;
     line-height: 56px;

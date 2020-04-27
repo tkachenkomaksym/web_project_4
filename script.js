@@ -1,25 +1,35 @@
-// // Let's find the popup in the DOM
-// let formElement = // Use the querySelector() method
-//
-// // Next is the popup submit handler, though
-// // it won't submit anywhere just yet
-//     function formSubmitHandler (evt) {
-//         evt.preventDefault(); // This line stops the browser from submitting the popup in the default way.
-//         // Having done so, we can define our own way of submitting the popup.
-//         // We'll explain it in more detail later.
-//
-//         // Let's find the popup fields in the DOM
-//         let nameInput = // Use querySelector()
-//             let jobInput = // Use querySelector()
-//
-//
-//         // Get the values of each field from the corresponding value property
-//
-//         // Select elements where the field values will be entered
-//
-//         // Insert new values using the textContent property of the querySelector() method
-//     }
-//
-// // Connect the handler to the popup:
-// // it will watch the submit event
-// formElement.addEventListener('submit', formSubmitHandler);
+//Can you give me a bit of advice on what I'm doing wrong?
+// 1. Onclick event is working, but not removing class with popup_opened
+// when I'm pressing the close button.
+// 2. Save is working but not replacing text in profile section
+
+let profileTitle = document.querySelector('.profile__title');
+let profileSubtitle = document.querySelector('.profile__subtitle');
+let profileEdit = document.querySelector('.profile__edit-button');
+let popupClose = document.querySelector('.popup__close-icon');
+let formElement = document.querySelector('.popup');
+let nameInput = document.querySelector('.popup__profile-title');
+let jobInput = document.querySelector('.popup__profile-subtitle');
+let tmpName;
+let tmpJob;
+
+profileEdit.addEventListener('click', displayPopup);
+popupClose.addEventListener('click', displayPopup);
+
+    function displayPopup() {
+        formElement.classList.toggle('popup_opened')
+    }
+
+    function formSubmitHandler (evt) {
+        evt.preventDefault();
+
+        tmpName = nameInput.value;
+        tmpJob = jobInput.value;
+
+        profileTitle = tmpName.textContent;
+        profileSubtitle = tmpJob.textContent;
+
+        displayPopup()
+    }
+
+formElement.addEventListener('submit', formSubmitHandler);

@@ -1,7 +1,7 @@
-@import url(./__item/elements__item.css);
-@import url(./__image/elements__image.css);
-@import url(./__content/elements__content.css);
-@import url(./__title/elements__title.css);
+@import url('./__item/elements__item.css');
+@import url('./__image/elements__image.css');
+@import url('./__content/elements__content.css');
+@import url('./__title/elements__title.css');
 
 .elements {
   list-style: none;

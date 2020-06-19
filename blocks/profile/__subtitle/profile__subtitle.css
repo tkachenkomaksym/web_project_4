@@ -1,4 +1,7 @@
 .profile__subtitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   margin: 18px 0 0;
   width: 100%;
   font-weight: normal;

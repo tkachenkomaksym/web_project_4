@@ -1,8 +1,3 @@
-//Got a new headache.
-// An issue with the close button is fixed,
-// but now save button if not working.
-// Any advice on how to fix this?
-
 const formElement = document.querySelector('.popup');
 const formEdit = document.querySelector('.popup__container');
 
@@ -13,7 +8,6 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 
 const nameInput = formEdit.querySelector('.popup__profile-title');
 const jobInput = formEdit.querySelector('.popup__profile-subtitle');
-
 
     function displayPopup(evt) {
         evt.stopPropagation();
@@ -31,7 +25,7 @@ const jobInput = formEdit.querySelector('.popup__profile-subtitle');
         profileTitle.textContent = nameInput.value;
         profileSubtitle.textContent = jobInput.value;
 
-        displayPopup()
+        displayPopup(evt)
     }
 
 formElement.addEventListener('submit', formSubmitHandler);

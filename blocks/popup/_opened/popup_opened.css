@@ -1,6 +1,3 @@
-/*It doesn't work without adding more weight
- to it by assigning a selector.
- Is there any workaround for this issue? */
-section.popup_opened {
+.popup.popup_opened {
   display: block;
 }

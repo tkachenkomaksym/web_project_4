@@ -84,17 +84,17 @@
     <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
   </footer>
 
-  <section class="popup popup_closed">
-
-    <form class="popup__container">
+  <div class="popup">
+    <div class="popup__container">
       <button class="button popup__close-icon"></button>
-      <h2 class="popup__title">Edit profile</h2>
-      <input type="text" class="popup__item popup__profile-title" placeholder="Name">
-      <input type="text" class="popup__item  popup__profile-subtitle" placeholder="About me">
-      <input type="submit" value="Save" class="button popup__submit">
-    </form>
-
-  </section>
+          <form class="popup__form">
+            <h2 class="popup__title">Edit profile</h2>
+            <input type="text" class="popup__item popup__profile-title" placeholder="Name">
+            <input type="text" class="popup__item  popup__profile-subtitle" placeholder="About me">
+            <input type="submit" value="Save" class="button popup__submit">
+          </form>
+    </div>
+  </div>
 
 <script src="script.js"></script>
 

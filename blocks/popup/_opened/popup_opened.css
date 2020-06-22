@@ -1,3 +1,4 @@
 .popup.popup_opened {
+  position: fixed;
   display: block;
 }

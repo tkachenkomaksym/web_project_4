@@ -11,8 +11,8 @@
   margin: 195px auto;
 }
 
-@media screen  and (max-width: 460px){
+@media screen  and (max-width: 480px){
   .popup__container {
-    width: 300px
+    width: 255px;
   }
 }

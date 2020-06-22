@@ -1,3 +1,4 @@
+@import url('../popup/__close-icon/popup__close-icon.css');
 @import url('_opened/popup_opened.css');
 @import url('_closed/popup_closed.css');
 @import url('__container/popup__container.css');

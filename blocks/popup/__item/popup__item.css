@@ -5,8 +5,8 @@
   padding-bottom: 13px;
 }
 
-@media screen  and (max-width: 460px){
+@media screen  and (max-width: 480px){
   .popup__item {
-    width: 248px
+    width: 225px;
   }
 }

@@ -11,8 +11,8 @@
   margin-top: 50px;
 }
 
-@media screen  and (max-width: 460px){
+@media screen  and (max-width: 480px){
   .popup__submit {
-    width: 248px
+    width: 235px;
   }
 }

@@ -31,3 +31,42 @@ const jobInput = formEdit.querySelector('.popup__profile-subtitle');
 formElement.addEventListener('submit', formSubmitHandler);
 profileEdit.addEventListener('click', displayPopup);
 popupClose.addEventListener('click', displayPopup);
+
+const initialCards = [
+    {
+        name: "Yosemite Valley",
+        link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+    },
+    {
+        name: "Lake Louise",
+        link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+    },
+    {
+        name: "Bald Mountains",
+        link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+    },
+    {
+        name: "Latemar",
+        link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+    },
+    {
+        name: "Vanois National Park",
+        link: "https://code.s3.yandex.net/web-code/vanois.jpg"
+    },
+    {
+        name: "Lago di Braies",
+        link: "https://code.s3.yandex.net/web-code/lago.jpg"
+    }
+];
+
+initialCards.forEach((card) => {
+    const templateCard = document.querySelector('.template-card').content.querySelector(".elements__item");
+    const cardEntity = templateCard.cloneNode(true);
+
+    const imageEntity = document.querySelector('.elements__image');
+    const titleEntity = document.querySelector('.elements__title');
+    const btnDeleteEntity = document.querySelector('.button_delete');
+    const btnHeartEntity = document.querySelector('.button_heart');
+
+    imageEntity.style.backgroundImage = ''
+})

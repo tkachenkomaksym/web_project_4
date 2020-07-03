@@ -59,14 +59,39 @@ const initialCards = [
     }
 ];
 
-initialCards.forEach((card) => {
+initialCards.forEach((data) => {
+    renderCard(data)
+})
+
+function renderCard(card) {
+
+    const placesList = document.querySelector('.elements');
+    placesList.prepend(createCard(card));
+}
+
+function createCard(){
     const templateCard = document.querySelector('.template-card').content.querySelector(".elements__item");
     const cardEntity = templateCard.cloneNode(true);
 
-    const imageEntity = document.querySelector('.elements__image');
-    const titleEntity = document.querySelector('.elements__title');
-    const btnDeleteEntity = document.querySelector('.button_delete');
-    const btnHeartEntity = document.querySelector('.button_heart');
+    const imageEntity = cardEntity.querySelector('.elements__image');
+    const titleEntity = cardEntity.querySelector('.elements__title');
+    const btnDeleteEntity = cardEntity.querySelector('.button_delete');
+    const btnHeartEntity = cardEntity.querySelector('.button_heart');
 
-    imageEntity.style.backgroundImage = ''
-})
+    imageEntity.style.backgroundImage = `url(${card.link})`;
+    titleEntity.textContent = card.name;
+
+    btnDeleteEntity.addEventListener('click', () => {
+        // clickDeleteButtonHandler()
+    })
+
+    btnHeartEntity.addEventListener('click', () => {
+        // clickLikeButtonHandler()
+    })
+
+    imageEntity.addEventListener('click', () => {
+        // openMo dal
+    })
+
+    return cardEntity;
+}

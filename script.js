@@ -1,37 +1,3 @@
-const formElement = document.querySelector('.popup');
-const formEdit = document.querySelector('.popup__container');
-
-const profileEdit = document.querySelector('.profile__edit-button');
-const popupClose = document.querySelector('.popup__close-icon');
-const profileTitle = document.querySelector('.profile__title');
-const profileSubtitle = document.querySelector('.profile__subtitle');
-
-const nameInput = formEdit.querySelector('.popup__profile-title');
-const jobInput = formEdit.querySelector('.popup__profile-subtitle');
-
-    function displayPopup(evt) {
-        evt.stopPropagation();
-
-        if (formElement.classList.contains('popup_closed')) {
-            nameInput.value = profileTitle.textContent;
-            jobInput.value = profileSubtitle.textContent;
-        }
-
-        formElement.classList.toggle('popup_opened')
-    }
-
-    function formSubmitHandler(evt) {
-        evt.preventDefault();
-        profileTitle.textContent = nameInput.value;
-        profileSubtitle.textContent = jobInput.value;
-
-        displayPopup(evt)
-    }
-
-formElement.addEventListener('submit', formSubmitHandler);
-profileEdit.addEventListener('click', displayPopup);
-popupClose.addEventListener('click', displayPopup);
-
 const initialCards = [
     {
         name: "Yosemite Valley",
@@ -59,20 +25,70 @@ const initialCards = [
     }
 ];
 
+const editFormElement = document.querySelector('.popup_type_edit-profile');
+const formEdit = editFormElement.querySelector('.popup__container');
+
+const addCardFormElement = document.querySelector('.popup_type_add-card');
+const formAddCard = addCardFormElement.querySelector('.popup__container');
+
+const profileEdit = document.querySelector('.profile__edit-button');
+const editProfilePopupClose = editFormElement.querySelector('.popup__close-icon');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
+
+const addCardPopupClose = addCardFormElement.querySelector('.popup__close-icon');
+
+const profileAddButton = document.querySelector('.profile__add-button');
+
+const nameInput = formEdit.querySelector('.popup__profile-title');
+const jobInput = formEdit.querySelector('.popup__profile-subtitle');
+
+const placesList = document.querySelector('.elements');
+const templateCard = document.querySelector('.template-card').content.querySelector(".elements__item");
+
+const addCardOpenModalButton = document.querySelector('.profile__add-button');
+addCardOpenModalButton.addEventListener('click', () => {
+})
+
+    function displayPopup(modal) {
+        if (!modal.classList.contains('popup_closed')) {
+            nameInput.value = profileTitle.textContent;
+            jobInput.value = profileSubtitle.textContent;
+        }
+        modal.classList.toggle('popup_opened')
+    }
+
+    function formSubmitHandler(evt) {
+        evt.preventDefault();
+        profileTitle.textContent = nameInput.value;
+        profileSubtitle.textContent = jobInput.value;
+
+        displayPopup(editFormElement);
+    }
+
+editFormElement.addEventListener('submit', formSubmitHandler);
+
+profileEdit.addEventListener('click', () => {
+    displayPopup(editFormElement);
+});
+editProfilePopupClose.addEventListener('click', () => {
+    displayPopup(editFormElement);
+});
+
+addCardPopupClose.addEventListener('click', () => {
+    displayPopup(addCardFormElement);
+})
+
 initialCards.forEach((data) => {
     renderCard(data)
 })
 
 function renderCard(card) {
-
-    const placesList = document.querySelector('.elements');
     placesList.prepend(createCard(card));
 }
 
-function createCard(){
-    const templateCard = document.querySelector('.template-card').content.querySelector(".elements__item");
+function createCard(card){
     const cardEntity = templateCard.cloneNode(true);
-
     const imageEntity = cardEntity.querySelector('.elements__image');
     const titleEntity = cardEntity.querySelector('.elements__title');
     const btnDeleteEntity = cardEntity.querySelector('.button_delete');
@@ -90,8 +106,12 @@ function createCard(){
     })
 
     imageEntity.addEventListener('click', () => {
-        // openMo dal
+        // openModal
     })
 
     return cardEntity;
 }
+
+profileAddButton.addEventListener('click', () => {
+    displayPopup(addCardFormElement)
+})

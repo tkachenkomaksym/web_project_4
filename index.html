@@ -36,19 +36,39 @@
     <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
   </footer>
 
-  <div class="popup">
+  <div class="popup popup_type_edit-profile">
     <div class="popup__container">
       <button class="button popup__close-icon"></button>
-          <form class="popup__form">
-            <h2 class="popup__title">Edit profile</h2>
-            <input type="text" class="popup__item popup__profile-title" placeholder="Name">
-            <input type="text" class="popup__item  popup__profile-subtitle" placeholder="About me">
-            <input type="submit" value="Save" class="button popup__submit">
+      <form class="popup__form">
+        <h2 class="popup__title">Edit profile</h2>
+        <input type="text" name="text" class="popup__item popup__profile-title" placeholder="Name">
+        <input type="text" name="description" class="popup__item  popup__profile-subtitle" placeholder="About me">
+        <button type="submit" class="button popup__submit">Save</button>>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_add-card">
+    <div class="popup__container">
+      <button class="button popup__close-icon"></button>
+          <form class="popup__form" name="add-place">
+            <h2 class="popup__title">New place</h2>
+            <input type="text" name="text" class="popup__item popup__card-title" placeholder="Title">
+            <input type="url" name="link" class="popup__item  popup__card-url" placeholder="Image link">
+            <button type="submit" class="button popup__submit">Create</button>>
           </form>
     </div>
   </div>
 
-<script src="script.js"></script>
+  <div class="popup popup_type_display-card">
+    <div class="popup__container">
+      <button class="button popup__close-icon"></button>
+      <img src="" alt="image">
+      <p></p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 
   <template class="template-card">
     <li class="elements__item">

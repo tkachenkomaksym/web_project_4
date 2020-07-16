@@ -4,4 +4,11 @@
   background: #ffffff;
   border-radius: 10px;
   margin-top: 20px;
+  margin-right: 0;
+}
+
+@media screen and (min-width: 990px){
+  .elements__item {
+    margin-right: 1%;
+  }
 }

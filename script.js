@@ -29,7 +29,7 @@ const editFormElement = document.querySelector('.popup_type_edit-profile');
 const formEdit = editFormElement.querySelector('.popup__container');
 
 const addCardFormElement = document.querySelector('.popup_type_add-card');
-const formAddCard = addCardFormElement.querySelector('.popup__container');
+const displayCardFormElement = document.querySelector('popup_type_display-card');
 
 const profileEdit = document.querySelector('.profile__edit-button');
 const editProfilePopupClose = editFormElement.querySelector('.popup__close-icon');
@@ -106,7 +106,7 @@ function createCard(card){
     })
 
     imageEntity.addEventListener('click', () => {
-        // openModal
+        displayPopup(displayCardFormElement)
     })
 
     return cardEntity;

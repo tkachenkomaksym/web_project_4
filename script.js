@@ -98,11 +98,11 @@ function createCard(card){
     titleEntity.textContent = card.name;
 
     btnDeleteEntity.addEventListener('click', () => {
-        // clickDeleteButtonHandler()
+        cardEntity.remove();
     })
 
     btnHeartEntity.addEventListener('click', () => {
-        // clickLikeButtonHandler()
+        btnHeartEntity.classList.toggle('button_heart-clicked');
     })
 
     imageEntity.addEventListener('click', () => {

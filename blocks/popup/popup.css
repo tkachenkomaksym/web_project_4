@@ -8,14 +8,18 @@
 @import url('__profile-title/popup__profile-title.css');
 @import url('__profile-subtitle/popup__profile-subtitle.css');
 @import url('__card-title/popup__card-title.css');
+@import url('__card-image/popup__card-image.css');
 @import url('__card-url/popup__card-url.css');
 @import url('__submit/popup__submit.css');
 
 .popup {
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
   background-color: rgba(0, 0, 0, .5);
   top: 0;
   left: 0;
+  opacity: 0;
+  transition: .7s;
+  pointer-events: none;
 }

@@ -1,3 +1,5 @@
+@import url(_preview/popup__container_preview.css);
+
 .popup__container {
   position: relative;
   width: 430px;
@@ -9,6 +11,7 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, .15);
   border-radius: 10px;
   margin: 195px auto;
+
 }
 
 @media screen  and (max-width: 480px){

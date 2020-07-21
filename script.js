@@ -133,6 +133,7 @@ function createCard(card){
 
     imageEntity.addEventListener('click', () => {
         popupImage.setAttribute('src', card.link);
+        popupImage.setAttribute('alt', card.name);
         popupImageFigcaption.textContent = card.name;
         displayPopup(displayCardFormElement)
     })

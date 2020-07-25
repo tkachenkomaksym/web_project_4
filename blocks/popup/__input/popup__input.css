@@ -1,4 +1,4 @@
-.popup__item {
+.popup__input {
   width: 358px;
   border: 0;
   color: #000;
@@ -6,7 +6,7 @@
 }
 
 @media screen  and (max-width: 480px){
-  .popup__item {
+  .popup__input {
     width: 225px;
   }
 }

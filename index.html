@@ -41,9 +41,15 @@
       <button class="button popup__close-icon"></button>
       <form class="popup__form">
         <h2 class="popup__title">Edit profile</h2>
-        <input type="text" name="text" class="popup__item popup__profile-title" placeholder="Name">
-        <input type="text" name="description" class="popup__item  popup__profile-subtitle" placeholder="About me">
-        <button type="submit" class="button popup__submit">Save</button>>
+        <label>
+          <input id="profile-name" type="text" name="text" class="popup__input popup__profile-title" placeholder="Name" required minlength="2" maxlength="40">
+          <span id="profile-name-error" class="popup__error"></span>
+        </label>>
+        <label>
+          <input id="profile-description" type="text" name="description" class="popup__input  popup__profile-subtitle" placeholder="About me" required minlength="2" maxlength="200">
+          <span id="profile-description-error" class="popup__error"></span>
+        </label>
+        <button type="submit" class="button popup__submit ">Save</button>>
       </form>
     </div>
   </div>
@@ -53,9 +59,15 @@
       <button class="button popup__close-icon"></button>
           <form class="popup__form">
             <h2 class="popup__title">New place</h2>
-            <input type="text" name="text" class="popup__item popup__card-title" placeholder="Title">
-            <input type="url" name="link" class="popup__item  popup__card-url" placeholder="Image link">
-            <button type="submit" class="button popup__submit">Create</button>>
+            <label>
+              <input id="place-title" type="text" name="text" class="popup__input popup__card-title" placeholder="Title" required minlength="1" maxlength="30">
+              <span id="place-title-error"  class="popup__error"></span>
+            </label>
+            <label>
+              <input id="place-img" type="url" name="link" class="popup__input  popup__card-url" placeholder="Image link" required>
+              <span id="place-img-error" class="popup__error"></span>
+            </label>
+            <button type="submit" class="button popup__submit popup__button_disabled">Create</button>>
           </form>
     </div>
   </div>
@@ -81,7 +93,8 @@
     </li>
   </template>
 
-  <script src="script.js" defer></script>
+  <script src="scripts/script.js" defer></script>
+  <script src="scripts/validation.js" defer></script>
 
 </body>
 </html>

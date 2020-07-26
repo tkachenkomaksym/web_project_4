@@ -18,10 +18,10 @@
       <img src="images/avatar.png" alt="cousteau" class="profile__avatar">
       <div class="profile__info">
         <h1 class="profile__title">Jacques Cousteau</h1>
-        <button class="profile__edit-button button"></button>
+        <button class="profile__edit-button button" aria-label="Edit profile"></button>
         <p class="profile__subtitle">Explorer</p>
       </div>
-    <button class="profile__add-button button"></button>
+    <button class="profile__add-button button" aria-label="Add card"></button>
     </section>
 
     <section class="elements-grid">
@@ -38,7 +38,7 @@
 
   <div class="popup popup_type_edit-profile">
     <div class="popup__container">
-      <button class="button popup__close-icon"></button>
+      <button class="button popup__close-icon" aria-label="Close popup"></button>
       <form class="popup__form">
         <h2 class="popup__title">Edit profile</h2>
         <label>
@@ -49,14 +49,14 @@
           <input id="profile-description" type="text" name="description" class="popup__input  popup__profile-subtitle" placeholder="About me" required minlength="2" maxlength="200">
           <span id="profile-description-error" class="popup__error"></span>
         </label>
-        <button type="submit" class="button popup__submit ">Save</button>>
+        <button type="submit" class="button popup__submit" aria-label="Save"> Save</button>>
       </form>
     </div>
   </div>
 
   <div class="popup popup_type_add-card">
     <div class="popup__container">
-      <button class="button popup__close-icon"></button>
+      <button class="button popup__close-icon" aria-label="Close popup"></button>
           <form class="popup__form">
             <h2 class="popup__title">New place</h2>
             <label>
@@ -67,14 +67,14 @@
               <input id="place-img" type="url" name="link" class="popup__input  popup__card-url" placeholder="Image link" required>
               <span id="place-img-error" class="popup__error"></span>
             </label>
-            <button type="submit" class="button popup__submit popup__button_disabled">Create</button>>
+            <button type="submit" class="button popup__submit popup__button_disabled" aria-label="Create card">Create</button>>
           </form>
     </div>
   </div>
 
   <div class="popup popup_type_display-card">
     <div class="popup__container popup__container_preview">
-      <button class="button popup__close-icon"></button>
+      <button class="button popup__close-icon" aria-label="Close popup"></button>
       <figure class="figure">
         <img src=""  alt="" class="popup__card-image">
         <figcaption class="popup__card-figcaption"></figcaption>
@@ -84,11 +84,11 @@
 
   <template class="template-card">
     <li class="elements__item">
-      <button class="button button_delete"></button>
+      <button class="button button_delete" aria-label="Delete"></button>
       <div class="elements__image"></div>>
       <div class="elements__content">
         <h2 class="elements__title"></h2>
-        <button class="button button_heart"></button>
+        <button class="button button_heart" aria-label="Like"></button>
       </div>
     </li>
   </template>

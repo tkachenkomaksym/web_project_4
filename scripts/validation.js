@@ -1,15 +1,18 @@
-const showErrorMessage = (form, input, rest) => {
+const showErrorMessage = (form, input, {errorClass, inputErrorClass, ...rest}) => {
     const error = form.querySelector(`#${input.id}-error`);
 
     error.textContent = input.validationMessage;
     error.classList.add('errorClass');
+    input.classList.add('inputErrorClass');
 }
 
-const hideErrorMessage = (form, input, rest) => {
+const hideErrorMessage = (form, input, {errorClass, inputErrorClass, ...rest}) => {
     const error = form.querySelector(`#${input.id}-error`);
+    error.textContent = '';
 
     error.classList.remove('errorClass');
-    error.textContent = '';
+    input.classList.remove('inputErrorClass');
+
 }
 const checkInputValidation = (form, input, rest) => {
     if (input.validity.valid) {
@@ -33,9 +36,9 @@ const enableValidation = ({formSelector, inputSelector, submitButtonSelector, ..
     const forms = Array.from(document.querySelectorAll(formSelector));
 
     forms.forEach((form) => {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', ((e) => {
             e.preventDefault()
-        });
+        }));
 
         const inputs = Array.from(document.querySelectorAll(inputSelector));
         const submitButton = document.querySelectorAll(submitButtonSelector);

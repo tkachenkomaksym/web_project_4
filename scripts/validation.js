@@ -2,16 +2,17 @@ const showErrorMessage = (form, input, {errorClass, inputErrorClass, ...rest}) =
     const error = form.querySelector(`#${input.id}-error`);
 
     error.textContent = input.validationMessage;
-    error.classList.add('errorClass');
-    input.classList.add('inputErrorClass');
+
+    error.classList.add(errorClass);
+    input.classList.add(inputErrorClass);
 }
 
 const hideErrorMessage = (form, input, {errorClass, inputErrorClass, ...rest}) => {
     const error = form.querySelector(`#${input.id}-error`);
     error.textContent = '';
 
-    error.classList.remove('errorClass');
-    input.classList.remove('inputErrorClass');
+    error.classList.remove(errorClass);
+    input.classList.remove(inputErrorClass);
 
 }
 const checkInputValidation = (form, input, rest) => {
@@ -41,7 +42,7 @@ const enableValidation = ({formSelector, inputSelector, submitButtonSelector, ..
         }));
 
         const inputs = Array.from(form.querySelectorAll(inputSelector));
-        const submitButton = document.querySelector(submitButtonSelector);
+        const submitButton = form.querySelector(submitButtonSelector);
 
         inputs.forEach((input) => {
             input.addEventListener('input', () => {
@@ -56,7 +57,7 @@ enableValidation({
     formSelector: ".popup__form",
     inputSelector: ".popup__input",
     submitButtonSelector: ".popup__submit",
-    inactiveButtonClass: "popup__button_disabled",
+    inactiveButtonClass: "button_disabled",
     inputErrorClass: "popup__input_type_error",
     errorClass: "popup__error_visible"
 });

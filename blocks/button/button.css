@@ -1,6 +1,7 @@
 @import url('_heart/button_heart.css');
 @import url('_heart-clicked/button_heart-clicked.css');
 @import url('_delete/button_delete.css');
+@import url('_disabled/button_disabled.css');
 
 .button {
   outline:none;

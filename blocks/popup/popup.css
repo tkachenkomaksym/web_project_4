@@ -11,6 +11,8 @@
 @import url('__card-image/popup__card-image.css');
 @import url('__card-url/popup__card-url.css');
 @import url('__submit/popup__submit.css');
+@import url('__error/popup__error.css');
+
 
 .popup {
   width: 100%;

@@ -152,8 +152,6 @@ document.addEventListener( 'keydown', (e) => {
 })
 
 document.addEventListener('click', (e) => {
-    e.preventDefault()
-    e.stopPropagation()
     if(e.target === popupParent) {
         popupParent.classList.remove('popup_opened');
     }

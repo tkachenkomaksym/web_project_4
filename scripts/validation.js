@@ -40,8 +40,8 @@ const enableValidation = ({formSelector, inputSelector, submitButtonSelector, ..
             e.preventDefault()
         }));
 
-        const inputs = Array.from(document.querySelectorAll(inputSelector));
-        const submitButton = document.querySelectorAll(submitButtonSelector);
+        const inputs = Array.from(form.querySelectorAll(inputSelector));
+        const submitButton = document.querySelector(submitButtonSelector);
 
         inputs.forEach((input) => {
             input.addEventListener('input', () => {

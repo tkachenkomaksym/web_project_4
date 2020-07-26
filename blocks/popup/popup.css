@@ -10,6 +10,7 @@
 @import url('__card-title/popup__card-title.css');
 @import url('__card-image/popup__card-image.css');
 @import url('__card-url/popup__card-url.css');
+@import url('__card-figcaption/popup__card-figcaption.css');
 @import url('__submit/popup__submit.css');
 @import url('__error/popup__error.css');
 

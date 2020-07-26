@@ -25,7 +25,7 @@ const initialCards = [
     }
 ];
 
-const popupParent = document.querySelector('.popup');
+const popupParent = document.querySelectorAll('.popup');
 const editFormElement = document.querySelector('.popup_type_edit-profile');
 const formEdit = editFormElement.querySelector('.popup__container');
 

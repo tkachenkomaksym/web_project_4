@@ -25,7 +25,7 @@ const initialCards = [
     }
 ];
 
-const popupParent = document.querySelectorAll('.popup');
+const popupParent = document.querySelector('.popup');
 const editFormElement = document.querySelector('.popup_type_edit-profile');
 const formEdit = editFormElement.querySelector('.popup__container');
 
@@ -150,6 +150,7 @@ document.addEventListener( 'keydown', (e) => {
         displayCardFormElement.classList.remove('popup_opened')
     }
 })
+
 
 document.addEventListener('click', (e) => {
     if(e.target === popupParent) {

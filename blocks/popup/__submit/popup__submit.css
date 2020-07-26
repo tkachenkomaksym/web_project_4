@@ -9,11 +9,12 @@
   background: #000;
   color: #fff;
   margin-top: 50px;
-  margin-bottom: 32px;
+  margin-bottom: 15px;
 }
 
 @media screen  and (max-width: 480px){
   .popup__submit {
     width: 235px;
+    margin-bottom: 0;
   }
 }

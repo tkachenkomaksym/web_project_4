@@ -25,6 +25,7 @@ const initialCards = [
     }
 ];
 
+const popupParent = document.querySelector('.popup');
 const editFormElement = document.querySelector('.popup_type_edit-profile');
 const formEdit = editFormElement.querySelector('.popup__container');
 
@@ -109,6 +110,7 @@ popupImageClose.addEventListener('click', () => {
     displayPopup(displayCardFormElement)
 });
 
+
 function renderCard(card) {
     placesList.prepend(createCard(card));
 }
@@ -140,3 +142,17 @@ function createCard(card){
 
     return cardEntity;
 }
+
+document.addEventListener( 'keydown', (e) => {
+    if(e.key === 'Escape'){
+        editFormElement.classList.remove('popup_opened')
+        addCardFormElement.classList.remove('popup_opened')
+        displayCardFormElement.classList.remove('popup_opened')
+    }
+})
+
+document.addEventListener('click', (e) => {
+    if(e.target === popupParent) {
+        popupParent.classList.remove('popup_opened');
+    }
+});

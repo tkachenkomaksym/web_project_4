@@ -1,6 +1,6 @@
-.button_disabled {
+.button.button_disabled {
   opacity: .2;
   border: 1px solid #000;
-  color: #000 !important;
-  background: #fff !important;
+  color: #000;
+  background: #fff;
 }

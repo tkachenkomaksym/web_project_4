@@ -1,3 +1,28 @@
+// import FormValidator from "./FormValidator";
+
+const defaultConfig = {
+    formSelector: ".popup__form",
+    inputSelector: ".popup__input",
+    submitButtonSelector: ".popup__submit",
+    inactiveButtonClass: "button_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_visible"
+};
+
+const editFormElement = document.querySelector('.popup_type_edit-profile');
+const addCardFormElement = document.querySelector('.popup_type_add-card');
+
+const editProfileForm = editFormElement.querySelector('popup__form')
+const addCardForm = editFormElement.querySelector('popup__form')
+
+
+const editFormValidator = new FormValidator(defaultConfig, editProfileForm);
+const addFormValidator = new FormValidator(defaultConfig, addCardForm);
+
+
+editFormValidator.enableValidation(defaultConfig);
+addFormValidator.enableValidation(defaultConfig);
+
 const initialCards = [
     {
         name: "Yosemite Valley",
@@ -25,10 +50,8 @@ const initialCards = [
     }
 ];
 
-const editFormElement = document.querySelector('.popup_type_edit-profile');
 const formEdit = editFormElement.querySelector('.popup__container');
 
-const addCardFormElement = document.querySelector('.popup_type_add-card');
 const formAddCard = addCardFormElement.querySelector('.popup__container');
 const cardTitleInput = formAddCard.querySelector('.popup__card-title');
 const cardUrlInput = formAddCard.querySelector('.popup__card-url');
@@ -46,13 +69,11 @@ const nameInput = formEdit.querySelector('.popup__profile-title');
 const jobInput = formEdit.querySelector('.popup__profile-subtitle');
 
 const placesList = document.querySelector('.elements');
-const templateCard = document.querySelector('.template-card').content.querySelector(".elements__item");
+// const templateCard = document.querySelector('.template-card').content.querySelector(".elements__item");
 
 const displayCardFormElement = document.querySelector('.popup_type_display-card');
-const popupImage = displayCardFormElement.querySelector('.popup__card-image');
-const popupImageFigcaption = displayCardFormElement.querySelector('.popup__card-figcaption');
-const popupImageClose = displayCardFormElement.querySelector('.popup__close-icon');
 
+const cardObject = new Card(displayPopup, displayCardFormElement, popupImage, popupImageFigcaption);
 
     function displayPopup(modal) {
         if (!modal.classList.contains('popup_closed')) {
@@ -74,7 +95,7 @@ editFormElement.addEventListener('submit', formSubmitHandler);
 
 function addNewCard (evt) {
     evt.preventDefault();
-    placesList.prepend(    createCard({
+    placesList.prepend(cardObject.createCard({
         name: cardTitleInput.value,
         link: cardUrlInput.value
     }));
@@ -105,42 +126,38 @@ initialCards.forEach((data) => {
     renderCard(data)
 })
 
-popupImageClose.addEventListener('click', () => {
-    displayPopup(displayCardFormElement)
-});
-
 
 function renderCard(card) {
-    placesList.prepend(createCard(card));
+    placesList.prepend(cardObject.createCard(card));
 }
 
-function createCard(card){
-    const cardEntity = templateCard.cloneNode(true);
-    const imageEntity = cardEntity.querySelector('.elements__image');
-    const titleEntity = cardEntity.querySelector('.elements__title');
-    const btnDeleteEntity = cardEntity.querySelector('.button_delete');
-    const btnHeartEntity = cardEntity.querySelector('.button_heart');
-
-    imageEntity.style.backgroundImage = `url(${card.link})`;
-    titleEntity.textContent = card.name;
-
-    btnDeleteEntity.addEventListener('click', () => {
-        cardEntity.remove();
-    })
-
-    btnHeartEntity.addEventListener('click', () => {
-        btnHeartEntity.classList.toggle('button_heart-clicked');
-    })
-
-    imageEntity.addEventListener('click', () => {
-        popupImage.setAttribute('src', card.link);
-        popupImage.setAttribute('alt', card.name);
-        popupImageFigcaption.textContent = card.name;
-        displayPopup(displayCardFormElement)
-    })
-
-    return cardEntity;
-}
+// function createCard(card){
+//     const cardEntity = templateCard.cloneNode(true);
+//     const imageEntity = cardEntity.querySelector('.elements__image');
+//     const titleEntity = cardEntity.querySelector('.elements__title');
+//     const btnDeleteEntity = cardEntity.querySelector('.button_delete');
+//     const btnHeartEntity = cardEntity.querySelector('.button_heart');
+//
+//     imageEntity.style.backgroundImage = `url(${card.link})`;
+//     titleEntity.textContent = card.name;
+//
+//     btnDeleteEntity.addEventListener('click', () => {
+//         cardEntity.remove();
+//     })
+//
+//     btnHeartEntity.addEventListener('click', () => {
+//         btnHeartEntity.classList.toggle('button_heart-clicked');
+//     })
+//
+//     imageEntity.addEventListener('click', () => {
+//         popupImage.setAttribute('src', card.link);
+//         popupImage.setAttribute('alt', card.name);
+//         popupImageFigcaption.textContent = card.name;
+//         displayPopup(displayCardFormElement)
+//     })
+//
+//     return cardEntity;
+// }
 
 document.addEventListener( 'keydown', (e) => {
     if(e.key === 'Escape'){

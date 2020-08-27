@@ -33,31 +33,31 @@ const toggleButtonState = (inputs, submitButton, {inactiveButtonClass}) => {
     }
 }
 
-const enableValidation = ({formSelector, inputSelector, submitButtonSelector, ...rest}) => {
-    const forms = Array.from(document.querySelectorAll(formSelector));
+// const enableValidation = ({formSelector, inputSelector, submitButtonSelector, ...rest}) => {
+//     const forms = Array.from(document.querySelectorAll(formSelector));
+//
+//     forms.forEach((form) => {
+//         form.addEventListener('submit', ((e) => {
+//             e.preventDefault()
+//         }));
+//
+//         const inputs = Array.from(form.querySelectorAll(inputSelector));
+//         const submitButton = form.querySelector(submitButtonSelector);
+//
+//         inputs.forEach((input) => {
+//             input.addEventListener('input', () => {
+//                 checkInputValidation(form, input, rest);
+//                 toggleButtonState(inputs, submitButton, rest)
+//             })
+//         })
+//     })
+// }
 
-    forms.forEach((form) => {
-        form.addEventListener('submit', ((e) => {
-            e.preventDefault()
-        }));
-
-        const inputs = Array.from(form.querySelectorAll(inputSelector));
-        const submitButton = form.querySelector(submitButtonSelector);
-
-        inputs.forEach((input) => {
-            input.addEventListener('input', () => {
-                checkInputValidation(form, input, rest);
-                toggleButtonState(inputs, submitButton, rest)
-            })
-        })
-    })
-}
-
-enableValidation({
-    formSelector: ".popup__form",
-    inputSelector: ".popup__input",
-    submitButtonSelector: ".popup__submit",
-    inactiveButtonClass: "button_disabled",
-    inputErrorClass: "popup__input_type_error",
-    errorClass: "popup__error_visible"
-});
+// enableValidation({
+//     formSelector: ".popup__form",
+//     inputSelector: ".popup__input",
+//     submitButtonSelector: ".popup__submit",
+//     inactiveButtonClass: "button_disabled",
+//     inputErrorClass: "popup__input_type_error",
+//     errorClass: "popup__error_visible"
+// });

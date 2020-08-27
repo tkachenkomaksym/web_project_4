@@ -1,28 +1,17 @@
-class Card {
-    constructor(displayPopup, displayCardFormElement, popupImage, popupImageFigcaption) {
-        this._displayPopup = displayPopup;
-        this._templateCard = document.querySelector('.template-card').content.querySelector(".elements__item");
-        this._displayCardFormElement = displayCardFormElement;
-        this._popupImage = displayCardFormElement.querySelector('.popup__card-image');;
-        this._popupImageFigcaption = popupImageFigcaption;
-        
-        const popupImageClose = displayCardFormElement.querySelector('.popup__close-icon');
-
-        popupImageClose.addEventListener('click', () => {
-            displayPopup(displayCardFormElement);
-        });
-
+export default class Card {
+    constructor(data, templateCard) {
+        this._data = data;
+        this._templateCard = templateCard;
     }
-
-    createCard(data){
+    createCard() {
         const cardEntity = this._templateCard.cloneNode(true);
         const imageEntity = cardEntity.querySelector('.elements__image');
         const titleEntity = cardEntity.querySelector('.elements__title');
         const btnDeleteEntity = cardEntity.querySelector('.button_delete');
         const btnHeartEntity = cardEntity.querySelector('.button_heart');
 
-        imageEntity.style.backgroundImage = `url(${data.link})`;
-        titleEntity.textContent = data.name;
+        imageEntity.style.backgroundImage = `url(${this._data.link})`;
+        titleEntity.textContent = this._data.name;
 
         btnDeleteEntity.addEventListener('click', () => {
             cardEntity.remove();
@@ -32,12 +21,6 @@ class Card {
             btnHeartEntity.classList.toggle('button_heart-clicked');
         })
 
-        imageEntity.addEventListener('click', () => {
-            this._popupImage.setAttribute('src', data.link);
-            this._popupImage.setAttribute('alt', data.name);
-            this._popupImageFigcaption.textContent = data.name;
-            this._displayPopup(this._displayCardFormElement)
-        })
         return cardEntity;
     }
 }
